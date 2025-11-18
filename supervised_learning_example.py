@@ -17,10 +17,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
 
+'''
 # Path to the uploaded zip file
-zip_path = 'traffic_light.zip'
+zip_path = 'dataset.zip'
 # Folder where you want to extract the contents
-extract_folder = 'dataset_traffic_light'
+extract_folder = 'dataset'
 # Create the folder if it doesn't exist
 if not os.path.exists(extract_folder):
   os.makedirs(extract_folder)
@@ -29,6 +30,8 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
   zip_ref.extractall(extract_folder)
 
 print(f"Extraction complete! Files are extracted to the '{extract_folder}' folder.")
+
+'''
 
 # Parameters
 IMAGE_SIZE = (128, 128)
@@ -50,14 +53,14 @@ test_gen = ImageDataGenerator(rescale=1./255)
 
 # load data / splitting data
 train_data = train_gen.flow_from_directory(
-    'dataset_traffic_light/traffic_light/dataset_traffic_light/data/train',
+    'dataset/data/train',
     target_size=IMAGE_SIZE,
     batch_size=BATCH_SIZE,
     class_mode='categorical'
 )
 
 test_data = test_gen.flow_from_directory(
-    'dataset_traffic_light/traffic_light/dataset_traffic_light/data/test',
+    'dataset/data/test',
     target_size=IMAGE_SIZE,
     batch_size=BATCH_SIZE,
     class_mode='categorical',
