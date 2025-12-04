@@ -4,3 +4,4 @@ scikit-learn
 pillow
 pandas
 ipython
+opencv-python
