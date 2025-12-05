@@ -5,3 +5,4 @@ pillow
 pandas
 ipython
 opencv-python
+tensorflow
